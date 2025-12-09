@@ -1,0 +1,12 @@
+# Ignore Python virtual environment
+venv/
+# Secrets and configuration files
+.env
+host_envs/*.env
+host_envs/
+*.pem
+*.key
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+xray*
