@@ -10,3 +10,4 @@ host_envs/
 __pycache__/
 *.py[cod]
 xray*
+.DS_Store
