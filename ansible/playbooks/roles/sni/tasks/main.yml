@@ -1,0 +1,36 @@
+---
+# tasks file for sni creation
+- name: Ensure required apt packages are installed
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - software-properties-common
+      - git
+    update_cache: yes
+
+- name: Enable and start Docker service
+  systemd:
+    name: docker
+    enabled: true
+    state: started
+
+- name: Clone the repository into user's home
+  git:
+    repo: "{{ repo_url }}"
+    dest: "/home/{{ ansible_user }}/{{ dest_subdir }}"
+    version: main
+    force: yes
+
+- name: Stop docker compose
+  command: docker compose down
+  args:
+    chdir: "/home/{{ ansible_user }}/{{ dest_subdir }}"
+
+- name: Run docker compose
+  command: docker compose up -d
+  args:
+    chdir: "/home/{{ ansible_user }}/{{ dest_subdir }}"
+...
