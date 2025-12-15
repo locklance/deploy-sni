@@ -1,0 +1,17 @@
+---
+- name: Deploy SNI
+  hosts: vpnnodes
+  become: true
+  gather_facts: true
+  vars_files:
+    - "roles/sni/files/secrets.yml"
+  vars:
+    docker_install_compose: true
+    docker_group: docker
+    repo_url: "https://github.com/locklance/xray-sni"
+    dest_subdir: "xray-sni"
+    sni_port: 9443
+  roles:
+    - geerlingguy.docker
+    - sni
+...
