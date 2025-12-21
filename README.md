@@ -2,7 +2,7 @@
 ![Ansible](https://img.shields.io/badge/automation-Ansible-blue?style=flat-square)
 ![Xray](https://img.shields.io/badge/xray-supported-purple?style=flat-square)
 
-Following guide, you will be able to deploy your own SNI with a DNS-01 certificate, which can be used as self steal SNI for VLESS-REALITY.
+By following this guide, you will be able to deploy your own SNI with a DNS-01 certificate, which can be used as self steal SNI for VLESS-REALITY.
 
 Two deploy methods are described below:
 1. [Manual deploy](#manual-deploy)
@@ -162,3 +162,4 @@ First of all, we need to register a domain. Create a real-looking unsuspicious d
 ![New token](/docs/media/get-api-key-3.png)
 4. Add rules to the token
 ![Permissions](/docs/media/get-api-key-4.png)
+
